@@ -99,3 +99,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+#credentials
+client_secrets.json
+streamuploader.py-oauth2.json
