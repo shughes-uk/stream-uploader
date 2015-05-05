@@ -29,4 +29,3 @@ if __name__ == '__main__':
 		uploaded_files_file = open(uploaded_files_fn,'a')
 		uploaded_files_file.write(filename+'\n')
 		uploaded_files_file.close()
-	os.system('pause')
