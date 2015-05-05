@@ -17,13 +17,13 @@ if __name__ == '__main__':
 		uploaded_files_file.close()
 	filenames = [os.path.join(args.directory,fn) for fn in next(os.walk(args.directory))[2]]
 	filenames = [fn for fn in filenames if os.path.splitext(fn)[1] in ['.mp4','.avi']]
-	print filenames
 	if os.path.join(args.directory,'uploaded_files.txt') in filenames:
 		filenames.remove(os.path.join(args.directory,'uploaded_files.txt'))
 	for uploaded_fn in uploaded:
 		if uploaded_fn in filenames:
 			filenames.remove(uploaded_fn)
 	for filename in filenames:
+		print 'Uploading %s' %filename
 		upload_args = { 'file': filename , 'title' : args.title_append + ' ' + ntpath.basename(filename)[:-4], 'description': None , 'tags' : None , 'category' : None, 'privacyStatus': 'private'}
 		Upload(upload_args)
 		uploaded_files_file = open(uploaded_files_fn,'a')
